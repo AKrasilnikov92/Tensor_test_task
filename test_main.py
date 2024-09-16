@@ -1,5 +1,5 @@
 from SbisRuPages import PagesHelper
-
+import time
 
 class Test:
     
@@ -47,6 +47,8 @@ class Test:
         assert region_info.text == 'Ярославская обл.'
         
         sbis_main_page.change_region_to_kamchatka()
+        
+        time.sleep(2)
         
         partners = sbis_main_page.partners_info()
         assert partners.get_attribute('title') == 'СБИС - Камчатка'
